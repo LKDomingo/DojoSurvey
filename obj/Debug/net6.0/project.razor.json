@@ -16298,6 +16298,11 @@
   "RootNamespace": "DojoSurvey",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\logan\\OneDrive\\Documents\\dojo_assignments\\C#\\ASP.NETCore\\DojoSurvey\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\logan\\OneDrive\\Documents\\dojo_assignments\\C#\\ASP.NETCore\\DojoSurvey\\Views\\Survey\\Index.cshtml",
       "TargetPath": "Views\\Survey\\Index.cshtml",
       "FileKind": "mvc"

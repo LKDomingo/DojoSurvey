@@ -4,11 +4,16 @@ namespace DojoSurvey.Models;
 
 public class User
 {
-    public string Name {get; set;}
+    [Required]
+    [MinLength(2)]
+    public string Name { get; set; }
 
-    public string Location {get; set;}
+    [Required]
+    public string Location { get; set; }
 
-    public int Language {get; set;}
+    [Required]
+    public string Language { get; set; }
 
-    public string Comment {get;set;}
+    [MinLength(21)]
+    public string? Comment { get; set; }
 }

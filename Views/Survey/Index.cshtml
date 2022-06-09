@@ -1,3 +1,5 @@
+@model User
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,23 +17,33 @@
         <h1 class="text-center">Dojo Survey</h1>
         <div class="border p-3">
             <form action="process" method="post">
-                <label for="Name">Your Name:</label>
-                <input class="form-control" type="text" name="Name">
-                <label for="Location">Dojo Location:</label>
-                <select class="form-control" name="Location" id="Location">
-                    <option value="San Jose">San Jose</option>
-                    <option value="Seattle">Seattle</option>
-                    <option value="Taos">Taos</option>
-                </select>
-                <label for="Language">Favorite Language:</label>
-                <select class="form-control" name="Language" id="Language">
-                    <option value="Python">Python</option>
-                    <option value="JavaScript">JavaScript</option>
-                    <option value="C#">C#</option>
-                </select>
+                <div class="form-group">
+                    <label for="Name">Your Name:</label>
+                    <input class="form-control" asp-for="Name">
+                    <small><span class="text-danger" asp-validation-for="Name"></span></small>
+                </div>
+                <div class="form-group">
+                    <label class="mt-3" for="Location">Dojo Location:</label>
+                    <select class="form-control" asp-for="Location">
+                        <option value="San Jose">San Jose</option>
+                        <option value="Seattle">Seattle</option>
+                        <option value="Taos">Taos</option>
+                    </select>
+                    <small><span class="text-danger" asp-validation-for="Location"></span></small>
+                </div>
+                <div class="form-group">
+                    <label class="mt-3" for="Language">Favorite Language:</label>
+                    <select class="form-control" asp-for="Language">
+                        <option value="Python">Python</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="C#">C#</option>
+                    </select>
+                    <small><span class="text-danger" asp-validation-for="Language"></span></small>
+                </div>
                 <div class="d-flex flex-column">
-                    <label for="Comment">Comment (optional):</label>
-                    <textarea class="form-control" name="Comment" id="" cols="3" rows="5"></textarea>
+                    <label class="mt-3" for="Comment">Comment (optional):</label>
+                    <textarea class="form-control" asp-for="Comment" cols="3" rows="5"></textarea>
+                    <small><span class="text-danger" asp-validation-for="Comment"></span></small>
                 </div>
                 <div class="d-flex justify-content-end">
                     <input class="btn btn-info mt-3" type="submit" value="Submit">
