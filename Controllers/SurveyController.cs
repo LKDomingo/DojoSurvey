@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc; //This is a service that brings in our MVC functionality
 namespace DojoSurvey.Controllers;     //be sure to use your own project's namespace!
+using DojoSurvey.Models;
     public class SurveyController : Controller   //remember inheritance??
     {
         //for each route this controller is to handle:
@@ -12,16 +13,8 @@ namespace DojoSurvey.Controllers;     //be sure to use your own project's namesp
         }
 
         [HttpPost("process")]
-        public IActionResult Process(string Name, string Location, string Language, string Comment)
+        public IActionResult Process(User newUser)
         {
-            System.Console.WriteLine($"Name: {Name}");
-            System.Console.WriteLine($"Location: {Location}");
-            System.Console.WriteLine($"Language: {Language}");
-            System.Console.WriteLine($"Comment: {Comment}");
-            ViewBag.Name = Name;
-            ViewBag.Location = Location;
-            ViewBag.Language = Language;
-            ViewBag.Comment = Comment;
-            return View("Success");
+            return View("Success", newUser);
         }
     }
